@@ -8,7 +8,7 @@ public class TalistockServlet extends HttpServlet {
 		int num1 = 4, num2 = 3, num3 = 7;
 		
 		
-		resp.setContentType("text/plain");
+		resp.setContentType("text/html");
 		resp.getWriter().println("Result of:" + "(("+num1+" + "+num2+") * " + num3+") = "+ ((num1+num2) * num3));
 	}
 }
