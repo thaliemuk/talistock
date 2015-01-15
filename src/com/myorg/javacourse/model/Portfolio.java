@@ -11,7 +11,7 @@ public class Portfolio {
 	private int portfolioSize;
 	
 	public Portfolio() {
-		this("");
+		this("default portfolio name");
 	}
 	public Portfolio(String title) {
 		this.title = title;
@@ -19,17 +19,17 @@ public class Portfolio {
 		portfolioSize = 0;
 	}
 	
-	public void addStock(Stock s){
+	public void addStock(Stock stock){
 		if(portfolioSize < MAX_PORTFOLIO_SIZE -1 ){
 			
-			this.stocks[this.portfolioSize] = s;
+			this.stocks[this.portfolioSize] = new Stock(stock);
 			this.portfolioSize++;
 		}
 	}
 	public Stock[] getStocks(){
 		return this.stocks;
 	}
-	public String getHtmlDescription(){
+	public String getHtmlString(){
 		String portfoiloString = "<h1>"+this.title+"</h1>";
 		
 		

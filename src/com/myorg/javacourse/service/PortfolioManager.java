@@ -7,7 +7,7 @@ import com.myorg.javacourse.model.Portfolio;
 
 public class PortfolioManager {
 	public Portfolio getPortfolio(){
-		Portfolio portfolio = new Portfolio("portfolio");	
+		Portfolio portfolio = new Portfolio("portfolio");
 		
 		Stock PIH = new Stock("PHI",(float)13.1,(float)12.4,new Date());
 		portfolio.addStock(PIH);

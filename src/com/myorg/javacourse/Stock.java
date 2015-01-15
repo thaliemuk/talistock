@@ -16,10 +16,7 @@ public class Stock {
 	private static final int HOLD = 3;
 	
 	public Stock(){
-		this.symbol  = "";
-		this.ask = 0;
-		this.bid = 0;
-		this.date = new Date();
+		this("",0,0,new Date(),0,0);
 	}
 	public Stock(String symbol, float ask,	float bid, Date date){
 		this.symbol  = symbol;
@@ -27,7 +24,21 @@ public class Stock {
 		this.bid = bid;
 		this.date = new Date(date.getTime());
 	}
+	public Stock(String symbol, float ask,	float bid, Date date, int recommendation, int stockQuantity){
+		this(symbol,ask,bid,date);
+		this.recommendation = recommendation;
+		this.stockQuantity = stockQuantity;
+	}
 	
+	public Stock(Stock other){
+		this.symbol = other.symbol;
+		this.ask = other.ask;
+		this.bid = other.bid;
+		this.date = new Date(other.date.getTime());
+		this.recommendation = other.recommendation;
+		this.stockQuantity = other. stockQuantity;
+		
+	}
 	public String getHtmlDescription(){
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
