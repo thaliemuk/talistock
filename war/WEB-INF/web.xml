@@ -5,30 +5,6 @@
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<servlet>
-		<servlet-name>Talistock</servlet-name>
-		<servlet-class>com.myorg.javacourse.TalistockServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Talistock</servlet-name>
-		<url-pattern>/talistock</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>Exercise3</servlet-name>
-		<servlet-class>com.myorg.javacourse.Exercise3</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Exercise3</servlet-name>
-		<url-pattern>/Exercise3</url-pattern>
-	</servlet-mapping>
-	<servlet>
-		<servlet-name>Exercise4</servlet-name>
-		<servlet-class>com.myorg.javacourse.StockDetailsServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>Exercise4</servlet-name>
-		<url-pattern>/stockdetails</url-pattern>
-	</servlet-mapping>
-	<servlet>
 		<servlet-name>Exercise5</servlet-name>
 		<servlet-class>com.myorg.javacourse.servlet.PortfolioServlet</servlet-class>
 	</servlet>

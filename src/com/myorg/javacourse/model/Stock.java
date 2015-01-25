@@ -1,8 +1,13 @@
-package com.myorg.javacourse;
+package com.myorg.javacourse.model;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * instance of this class represents a Stock
+ * @author tali
+ * @since 25/01/2015
+ * */
 public class Stock {
 	private String symbol;
 	private float ask;
@@ -15,30 +20,41 @@ public class Stock {
 	private static final int REMOVE = 2;
 	private static final int HOLD = 3;
 	
+	/**
+	 * empty constructor of stock
+	 * */
 	public Stock(){
 		this("",0,0,new Date(),0,0);
 	}
-	public Stock(String symbol, float ask,	float bid, Date date){
+	/*
+	 * create a new stock with default values
+	 * */
+	public Stock(String symbol, float ask,	float bid, Date date, int recommendation, int stockQuantity){
 		this.symbol  = symbol;
 		this.ask = ask;
 		this.bid = bid;
 		this.date = new Date(date.getTime());
-	}
-	public Stock(String symbol, float ask,	float bid, Date date, int recommendation, int stockQuantity){
-		this(symbol,ask,bid,date);
 		this.recommendation = recommendation;
 		this.stockQuantity = stockQuantity;
 	}
-	
-	public Stock(Stock other){
-		this.symbol = other.symbol;
-		this.ask = other.ask;
-		this.bid = other.bid;
-		this.date = new Date(other.date.getTime());
-		this.recommendation = other.recommendation;
-		this.stockQuantity = other. stockQuantity;
-		
+	/**
+	 * create a new stock with default values
+	 * */
+	public Stock(String symbol, float ask,	float bid, Date date){
+		this(symbol, ask, bid, date, 0, 0);	
 	}
+	
+	/**
+	 * create a deep copied stock
+	 * @param other - the stock from which to create a new copied stock
+	 * */
+	public Stock(Stock other){
+		this(other.symbol, other.ask, other.bid, other.date, other.recommendation, other. stockQuantity );	
+	}
+
+	/**
+	 * @return a string representation of stock
+	 * */
 	public String getHtmlDescription(){
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
