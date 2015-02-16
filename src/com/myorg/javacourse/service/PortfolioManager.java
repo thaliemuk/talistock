@@ -1,22 +1,27 @@
 package com.myorg.javacourse.service;
 
-import java.util.Date;
-
 import com.myorg.javacourse.model.Portfolio;
 import com.myorg.javacourse.model.Stock;
 
 public class PortfolioManager {
 	public Portfolio getPortfolio(){
-		Portfolio portfolio = new Portfolio("portfolio #1");
+		Portfolio portfolio = new Portfolio();
+		portfolio.setTitle("Exercise 7 portfolio");
+		portfolio.updateBalance(10000);
 		
-		Stock PIH = new Stock("PHI",(float)13.1,(float)12.4,new Date());
-		portfolio.addStock(PIH);
+		Stock PIH = new Stock("PHI", 10f, 8.5f,20);
 		
-		Stock AAL = new Stock("AAL",(float)5.78,(float)5.5,new Date());
-		portfolio.addStock(AAL);
+		portfolio.buyStock(PIH);
 		
-		Stock CAAS = new Stock("CAAS",(float)32.2,(float)31.5,new Date());
-		portfolio.addStock(CAAS);
+		Stock AAL = new Stock("AAL",30f,25.5f,30);
+		portfolio.buyStock(AAL);
+		
+		Stock CAAS = new Stock("CAAS",20f,15.5f,40);
+		portfolio.buyStock(CAAS);
+		
+		portfolio.sellStock("AAL");
+		portfolio.removeStock("CAAS");
+		
 		
 		return portfolio;
 

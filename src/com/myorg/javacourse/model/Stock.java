@@ -3,6 +3,8 @@ package com.myorg.javacourse.model;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import com.myorg.javacourse.model.Portfolio.ALGO_RECOMMENDATION;
+
 /**
  * instance of this class represents a Stock
  * @author tali
@@ -13,23 +15,20 @@ public class Stock {
 	private float ask;
 	private float bid;
 	private Date date;
-	private int recommendation;
+	private ALGO_RECOMMENDATION recommendation;
 	private int stockQuantity;
-	private static final int BUY = 0;
-	private static final int SELL = 1;
-	private static final int REMOVE = 2;
-	private static final int HOLD = 3;
+
 	
 	/**
 	 * empty constructor of stock
 	 * */
 	public Stock(){
-		this("",0,0,new Date(),0,0);
+		this("",0,0,new Date(),ALGO_RECOMMENDATION.BUY,0);
 	}
 	/*
 	 * create a new stock with default values
 	 * */
-	public Stock(String symbol, float ask,	float bid, Date date, int recommendation, int stockQuantity){
+	public Stock(String symbol, float ask,	float bid, Date date, ALGO_RECOMMENDATION recommendation, int stockQuantity){
 		this.symbol  = symbol;
 		this.ask = ask;
 		this.bid = bid;
@@ -41,7 +40,13 @@ public class Stock {
 	 * create a new stock with default values
 	 * */
 	public Stock(String symbol, float ask,	float bid, Date date){
-		this(symbol, ask, bid, date, 0, 0);	
+		this(symbol, ask, bid, date, ALGO_RECOMMENDATION.BUY, 0);	
+	}
+	/**
+	 * create a new stock with default values
+	 * */
+	public Stock(String symbol, float ask,	float bid, int stockQuantity){
+		this(symbol, ask, bid,new Date(), ALGO_RECOMMENDATION.BUY, stockQuantity);	
 	}
 	
 	/**
@@ -62,7 +67,8 @@ public class Stock {
 		return "<b> Stock Symbol: </b> "+this.getSymbol() +
 				", <b> Ask: </b> "+this.getAsk()+
 				", <b> bid: </b> " + this.getBid()+
-				", <b> date: </b> " + dateFormat.format(this.getDate());
+				", <b> date: </b> " + dateFormat.format(this.getDate())+
+				", <b> quantity: </b> " + this.getStockQuantity();
 	}
 	
 	public String getSymbol() {
@@ -89,6 +95,19 @@ public class Stock {
 	public void setDate(Date date) {
 		this.date = new Date(date.getTime());
 	}
+	public ALGO_RECOMMENDATION getRecommendation() {
+		return recommendation;
+	}
+	public void setRecommendation(ALGO_RECOMMENDATION recommendation) {
+		this.recommendation = recommendation;
+	}
+	public int getStockQuantity() {
+		return stockQuantity;
+	}
+	public void setStockQuantity(int stockQuantity) {
+		this.stockQuantity = stockQuantity;
+	}
+	
 	
 	
 

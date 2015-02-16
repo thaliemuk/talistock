@@ -5,11 +5,11 @@
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<servlet>
-		<servlet-name>Exercise5</servlet-name>
+		<servlet-name>javacourse</servlet-name>
 		<servlet-class>com.myorg.javacourse.servlet.PortfolioServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Exercise5</servlet-name>
+		<servlet-name>javacourse</servlet-name>
 		<url-pattern>/portfolio</url-pattern>
 	</servlet-mapping>
 	<welcome-file-list>
